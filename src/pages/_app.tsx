@@ -42,6 +42,7 @@ export const AllianceNo1 = localFont({
   ],
   fallback: ['Helvetica', 'ui-sans-serif'],
 });
+
 export const AllianceNo2 = localFont({
   src: [
     {
