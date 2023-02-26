@@ -1,8 +1,8 @@
 import 'the-new-css-reset/css/reset.css';
 import '@/styles/globals.scss';
 
-import localFont from '@next/font/local';
 import type { AppProps } from 'next/app';
+import localFont from 'next/font/local';
 
 import Header from '@/components/Header/Header';
 
