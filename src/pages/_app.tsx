@@ -30,12 +30,12 @@ export const AllianceNo1 = localFont({
       style: 'normal',
     },
     {
-      path: '../fonts/AllianceNo1/AllianceNo1-Semibold.woff',
+      path: '../fonts/AllianceNo1/AllianceNo1-SemiBold.woff',
       weight: '600',
       style: 'normal',
     },
     {
-      path: '../fonts/AllianceNo1/AllianceNo1-Semibold.woff2',
+      path: '../fonts/AllianceNo1/AllianceNo1-SemiBold.woff2',
       weight: '600',
       style: 'normal',
     },
@@ -55,12 +55,12 @@ export const AllianceNo2 = localFont({
       style: 'normal',
     },
     {
-      path: '../fonts/AllianceNo2/AllianceNo2-Semibold.woff',
+      path: '../fonts/AllianceNo2/AllianceNo2-SemiBold.woff',
       weight: '600',
       style: 'normal',
     },
     {
-      path: '../fonts/AllianceNo2/AllianceNo2-Semibold.woff2',
+      path: '../fonts/AllianceNo2/AllianceNo2-SemiBold.woff2',
       weight: '600',
       style: 'normal',
     },
