@@ -9,33 +9,33 @@ import Header from '@/components/Header/Header';
 export const AllianceNo1 = localFont({
   src: [
     {
-      path: '../../public/fonts/AllianceNo1/AllianceNo1-Regular.woff',
+      path: './fonts/AllianceNo1/AllianceNo1-Regular.woff',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/AllianceNo1/AllianceNo1-Regular.woff',
+      path: './fonts/AllianceNo1/AllianceNo1-Regular.woff',
       weight: '400',
       style: 'normal',
     },
 
     {
-      path: '../../public/fonts/AllianceNo1/AllianceNo1-Medium.woff',
+      path: './fonts/AllianceNo1/AllianceNo1-Medium.woff',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/AllianceNo1/AllianceNo1-Medium.woff',
+      path: './fonts/AllianceNo1/AllianceNo1-Medium.woff',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/AllianceNo1/AllianceNo1-Semibold.woff',
+      path: './fonts/AllianceNo1/AllianceNo1-Semibold.woff',
       weight: '600',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/AllianceNo1/AllianceNo1-Semibold.woff',
+      path: './fonts/AllianceNo1/AllianceNo1-Semibold.woff',
       weight: '600',
       style: 'normal',
     },
@@ -44,22 +44,22 @@ export const AllianceNo1 = localFont({
 export const AllianceNo2 = localFont({
   src: [
     {
-      path: '../../public/fonts/AllianceNo2/AllianceNo2-Medium.woff',
+      path: './fonts/AllianceNo2/AllianceNo2-Medium.woff',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/AllianceNo2/AllianceNo2-Medium.woff',
+      path: './fonts/AllianceNo2/AllianceNo2-Medium.woff',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/AllianceNo2/AllianceNo2-Semibold.woff',
+      path: './fonts/AllianceNo2/AllianceNo2-Semibold.woff',
       weight: '600',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/AllianceNo2/AllianceNo2-Semibold.woff',
+      path: './fonts/AllianceNo2/AllianceNo2-Semibold.woff',
       weight: '600',
       style: 'normal',
     },
