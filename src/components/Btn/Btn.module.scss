@@ -1,0 +1,14 @@
+.btn {
+  padding: 12px 20px;
+
+  display: block;
+  border-radius: 12px;
+  color: var(--gray-0);
+  &_primary {
+    background: var(--accent);
+  }
+  &_secondary {
+    border: 1px solid #343f53;
+    background: var(--cards);
+  }
+}

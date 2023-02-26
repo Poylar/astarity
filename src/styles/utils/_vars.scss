@@ -1,0 +1,41 @@
+@use './mixins' as *;
+
+:root {
+  --container: 1290px;
+  --gap: 15px;
+  --gap-y: 80px;
+  @each $breakpoint, $val in $breakpoints {
+    @include media($breakpoint) {
+      @if $val == 1920px {
+        $val: 1920px;
+      }
+      @if $val == 1440px {
+        $val: 1200px;
+      }
+
+      --container: #{$val};
+    }
+  }
+  @include media(lg) {
+    --gap: 15px;
+    --gap-y: 40px;
+  }
+}
+:root {
+  --accent: #d00171;
+  --black: #060812;
+  --gray-0: #fff;
+  --gray-25: #fcfcfd;
+  --gray-50: #f8fafc;
+  --gray-100: #eef2f6;
+  --gray--200: #e3e8ef;
+  --gray-300: #cdd5df;
+  --gray-400: #9aa4b2;
+  --gray-500: #697586;
+  --gray-600: #4b5565;
+  --gray-700: #364152;
+  --gray-800: #364152;
+  --gray-900: #121926;
+  --cards: #161c26;
+  --inside-cards: #242a33;
+}

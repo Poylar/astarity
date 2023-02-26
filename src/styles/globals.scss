@@ -1,0 +1,29 @@
+@use './utils/mixins';
+@use './utils/vars';
+
+body {
+  background: var(--black);
+  color: var(--gray-0);
+}
+
+.main {
+  margin-top: var(--header-height);
+}
+
+.container {
+  max-width: var(--container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gap);
+  padding-right: var(--gap);
+  &--big {
+    max-width: 1920px;
+  }
+}
+
+.section {
+  margin-bottom: 160px;
+  &_l {
+    margin-bottom: 180px;
+  }
+}
