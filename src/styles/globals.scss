@@ -8,7 +8,7 @@ body {
 }
 
 .main {
-  margin-top: var(--header-height);
+  margin-top: var(--header-height, 139px);
 }
 
 .container {
