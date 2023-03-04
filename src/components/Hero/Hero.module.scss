@@ -11,7 +11,7 @@
 }
 
 .sectionHero {
-  height: calc(100vh - var(--header-height));
+  height: 100vh;
   min-height: 600px;
   margin-bottom: 70px;
   @include media(md) {
