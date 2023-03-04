@@ -1,4 +1,9 @@
+@use '../../styles/utils/mixins' as *;
+
 .cards {
+  @include media(sm) {
+    grid-template-columns: 1fr;
+  }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;

@@ -13,6 +13,7 @@ const Btn = (props: Props) => {
   const { children, className, link, variant } = props;
   return (
     <a
+      data-aos="fade-right"
       href={link}
       className={`${className} ${button.btn} ${
         variant == 'secondary' ? button.btn_secondary : button.btn_primary

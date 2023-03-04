@@ -32,14 +32,27 @@ const Hero = () => {
       <Stars />
       <div className="container">
         <div className={styles.hero}>
-          <h1 className={`${AllianceNo2.className} ${styles.hero__title}`}>
+          <h1
+            className={`${AllianceNo2.className} ${styles.hero__title}`}
+            data-aos="fade-down"
+          >
             Astar native leverage protocol for DeFi
           </h1>
-          <p className={`${AllianceNo1.className} ${styles.hero__desc}`}>
+          <p
+            className={`${AllianceNo1.className} ${styles.hero__desc}`}
+            data-aos="fade-down"
+            data-aos-delay="500"
+          >
             Your boundless possibilities to{' '}
             <span className={styles.hero__gradientText}> earn</span>
           </p>
-          <button className={styles.hero__btn} style={degStyle} disabled>
+          <button
+            className={styles.hero__btn}
+            style={degStyle}
+            disabled
+            data-aos="fade-down"
+            data-aos-delay="700"
+          >
             <span>Coming soon</span>
           </button>
         </div>

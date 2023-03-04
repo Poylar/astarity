@@ -3,6 +3,7 @@ import React from 'react';
 import socials from '@/components/SocialsList/SocialsList.module.scss';
 
 interface Props {
+  className?: string;
   items: {
     element: JSX.Element;
     link: string;
@@ -10,9 +11,9 @@ interface Props {
 }
 
 const SocialsList: React.FC<Props> = (props) => {
-  const { items } = props;
+  const { items, className } = props;
   return (
-    <div className={socials.socialsList}>
+    <div className={`${socials.socialsList} ${className}`} data-aos="fade-left">
       {items.map((Element, index) => (
         <div className={socials.socialsItem} key={index}>
           <a

@@ -1,28 +1,29 @@
 @use './mixins' as *;
 
 :root {
-  --container: 1290px;
-  --gap: 15px;
+  --container: 1232px;
+  --gap: 16px;
   --gap-y: 80px;
   @each $breakpoint, $val in $breakpoints {
     @include media($breakpoint) {
       @if $val == 1920px {
-        $val: 1920px;
-      }
-      @if $val == 1440px {
-        $val: 1200px;
+        $val: 1200;
       }
 
       --container: #{$val};
     }
   }
   @include media(lg) {
-    --gap: 15px;
+    --gap: 16px;
     --gap-y: 40px;
+  }
+  @include media(md) {
+    --container: 720px;
   }
 }
 :root {
   --accent: #d00171;
+  --accent-blue: #31acd3;
   --black: #060812;
   --gray-0: #fff;
   --gray-25: #fcfcfd;

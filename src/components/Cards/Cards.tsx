@@ -8,12 +8,14 @@ const cardsData = [
     title: 'Liquidity providers',
     desc: 'For passive liquidity providers who don’t want to actively manage their positions and simply want to get APY rewards in the same asset.',
     image: '/assets/cards/1.svg',
+    imageMobile: '/assets/cards/1-m.svg',
     buttonText: 'Provide liquidity',
   },
   {
     title: 'Leverage farmers',
     desc: 'For leverage users who actively degen in top farms, manage their own risks, and are very active in DeFi.',
     image: '/assets/cards/2.svg',
+    imageMobile: '/assets/cards/2-m.svg',
     buttonText: 'Farm with leverage',
   },
 ];

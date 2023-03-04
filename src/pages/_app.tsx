@@ -1,9 +1,13 @@
 import 'the-new-css-reset/css/reset.css';
 import '@/styles/globals.scss';
+import 'aos/dist/aos.css';
 
+import AOS from 'aos';
 import type { AppProps } from 'next/app';
 import localFont from 'next/font/local';
+import { useEffect } from 'react';
 
+import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 
 export const AllianceNo1 = localFont({
@@ -69,10 +73,23 @@ export const AllianceNo2 = localFont({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
   return (
     <div className={AllianceNo1.className}>
+      <style jsx global>{`
+        :root {
+          --font-primary: ${AllianceNo1.style.fontFamily};
+          --font-secondary: ${AllianceNo2.style.fontFamily};
+        }
+      `}</style>
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </div>
   );
 }

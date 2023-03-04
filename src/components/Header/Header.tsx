@@ -11,15 +11,15 @@ import styles from './Header.module.scss';
 
 const socialsArray = [
   {
-    element: <Twitter color="#fff" />,
+    element: <Twitter color="#697586" />,
     link: 'google.com',
   },
   {
-    element: <Discord color="#fff" />,
+    element: <Discord color="#697586" />,
     link: 'google.com',
   },
   {
-    element: <Telegram color="#fff" />,
+    element: <Telegram color="#697586" />,
     link: 'google.com',
   },
 ];
@@ -47,8 +47,8 @@ const Header: React.FC = () => {
   return (
     <header ref={header} className={`${styles.header} container container--big`}>
       <div className={styles.header__inner}>
-        <SocialsList items={socialsArray} />
-        <div className={styles.header__logo}>
+        <SocialsList className={styles.header__socials} items={socialsArray} />
+        <div className={styles.header__logo} data-aos="fade-down">
           <Logo />
         </div>
         <Btn className={styles.header__btn} link="google.com">

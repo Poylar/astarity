@@ -1,3 +1,5 @@
+@use '../../styles/utils/mixins' as *;
+
 .header {
   position: absolute;
   width: 100%;
@@ -5,6 +7,25 @@
   left: 50%;
   top: 0;
   transform: translateX(-50%);
+  @include media(md) {
+    padding: 34px 40px;
+  }
+  @include media(sm) {
+    padding: 16px;
+  }
+  &__socials {
+    @include media(sm) {
+      display: none;
+    }
+  }
+  &__logo {
+    @include media(sm) {
+      width: 160px;
+      img {
+        width: 100%;
+      }
+    }
+  }
   &__inner {
     display: flex;
     justify-content: space-between;

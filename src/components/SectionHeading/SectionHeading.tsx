@@ -15,6 +15,7 @@ const SectionHeading: React.FC<Props> = (props) => {
   return (
     <div className={`${styles.sectionHeading}`}>
       <h2
+        data-aos="fade-up"
         className={`${
           variant === 'small'
             ? styles.sectionHeading__titleSmall
@@ -23,7 +24,15 @@ const SectionHeading: React.FC<Props> = (props) => {
       >
         {title}
       </h2>
-      {desc && <p className={styles.sectionHeading__desc}>{desc}</p>}
+      {desc && (
+        <p
+          data-aos="fade-up"
+          data-aos-delay="300"
+          className={styles.sectionHeading__desc}
+        >
+          {desc}
+        </p>
+      )}
     </div>
   );
 };

@@ -1,9 +1,10 @@
-@use './utils/mixins';
-@use './utils/vars';
+@use './utils/mixins' as *;
+@use './utils/vars' as *;
 
 body {
   background: var(--black);
   color: var(--gray-0);
+  overflow-x: hidden;
 }
 
 .main {
@@ -22,8 +23,20 @@ body {
 }
 
 .section {
-  margin-bottom: 160px;
+  @include media(md) {
+    margin-bottom: 60px;
+  }
+  @include media(sm) {
+    margin-bottom: 80px;
+  }
+  margin-bottom: 125px;
   &_l {
-    margin-bottom: 180px;
+    @include media(md) {
+      margin-bottom: 80px;
+    }
+    @include media(sm) {
+      margin-bottom: 60px;
+    }
+    margin-bottom: 160px;
   }
 }

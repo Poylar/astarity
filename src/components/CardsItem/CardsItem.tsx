@@ -10,24 +10,28 @@ type Props = {
   title: string;
   desc: string;
   image?: string;
+  imageMobile?: string;
   buttonText: string;
 };
 
 const CardsItem: React.FC<Props> = (props) => {
-  const { title, desc, image, buttonText } = props;
+  const { title, desc, image, imageMobile, buttonText } = props;
 
   return (
     <div className={styles.card}>
       <div className={styles.card__inner}>
         <div className={styles.card__image}>
           {image && (
-            <Image
-              className={styles.card__imageContent}
-              src={image}
-              width={500}
-              height={123}
-              alt=""
-            />
+            <picture>
+              {imageMobile && <source srcSet={imageMobile} media="(max-width:768px)" />}
+              <Image
+                className={styles.card__imageContent}
+                src={image}
+                width={500}
+                height={123}
+                alt=""
+              />
+            </picture>
           )}
           <Image
             className={styles.card__imageGrid}
