@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import TextContent from '@/components/TextContent/TextContent';
+import TextContent from '@/components/layout/TextContent/TextContent';
 
 export default function terms() {
   return (
