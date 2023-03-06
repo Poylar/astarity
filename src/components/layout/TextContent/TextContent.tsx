@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-import Arrow from '../../../public/assets/icons/arrow.svg';
+import Arrow from '../../../../public/assets/icons/arrow.svg';
 import styles from './TextContent.module.scss';
 
 const TextContent = () => {
