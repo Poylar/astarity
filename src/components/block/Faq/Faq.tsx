@@ -10,7 +10,7 @@ const Faq: React.FC = () => {
   return (
     <section className="section section_l container">
       <SectionHeading title="Frequently Asked Questions" variant="small" />
-      <div className={styles.faq}>
+      <div className={styles.faq} data-aos="fade-right">
         {faqData.map((elem) => (
           <FaqItem {...elem} key={elem.question} />
         ))}

@@ -76,7 +76,7 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: false,
+      once: true,
     });
   }, []);
   return (

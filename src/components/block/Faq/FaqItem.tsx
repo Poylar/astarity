@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { HTMLAttributes, useRef, useState } from 'react';
 
 import { AllianceNo2 } from '@/pages/_app';
 
@@ -6,20 +6,18 @@ import Minus from '../../../../public/assets/icons/faq/minus.svg';
 import Plus from '../../../../public/assets/icons/faq/plus.svg';
 import styles from './Faq.module.scss';
 
-interface IFaqItem {
+interface IFaqItem extends HTMLAttributes<HTMLDivElement> {
   question: string;
   answer: string;
 }
 
-const FaqItem: React.FC<IFaqItem> = (props) => {
-  const { question, answer } = props;
+const FaqItem: React.FC<IFaqItem> = ({ question, answer, className, ...props }) => {
   const faqContent = useRef<HTMLDivElement>(null);
   const [faqState, setFaqState] = useState<boolean>(false);
-  const [activeIndex, setActiveIndex] = useState<number>(-1); // Добавляем новый state для отслеживания активного элемента
+  const [activeIndex, setActiveIndex] = useState<number>(-1);
 
   function toggleFaq(index: number) {
-    // Принимаем индекс элемента в качестве аргумента
-    setActiveIndex(index); // Устанавливаем активный индекс для нового элемента
+    setActiveIndex(index);
     setFaqState((prev) => !prev);
   }
 
@@ -27,8 +25,9 @@ const FaqItem: React.FC<IFaqItem> = (props) => {
 
   return (
     <div
-      className={`${styles.faqItem} ${faqState && styles.faqItem_opened}`}
-      onClick={() => toggleFaq(activeIndex === -1 ? 0 : -1)} // Если ни один элемент не открыт, открываем данный элемент, иначе закрываем его и все остальные
+      className={`${styles.faqItem} ${faqState && styles.faqItem_opened} ${className}`}
+      onClick={() => toggleFaq(activeIndex === -1 ? 0 : -1)}
+      {...props}
     >
       <div
         className={`${styles.faqItem__inner} ${

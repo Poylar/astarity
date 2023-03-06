@@ -42,9 +42,16 @@ const CardsItem: React.FC<Props> = (props) => {
           />
         </div>
         <div className={styles.card__text}>
-          <h3 className={`${styles.card__title} ${AllianceNo2.className}`}>{title}</h3>
+          <h3 className={`${styles.card__title} ${AllianceNo2.className}`} data-aos>
+            {title}
+          </h3>
           <p className={styles.card__desc}>{desc}</p>
-          <Btn variant="secondary" className={styles.card__btn} href="https://google.com">
+          <Btn
+            variant="secondary"
+            className={styles.card__btn}
+            data-aos="zoom-in"
+            href="https://google.com"
+          >
             {buttonText}
           </Btn>
         </div>
