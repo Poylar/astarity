@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import cardsData from '@/mock/cards.json';
 
 import CardsItem from '../CardsItem/CardsItem';
 import styles from './Cards.module.scss';
 
-const Cards = () => {
+const Cards: React.FC = () => {
   return (
     <div className={styles.cards}>
       {cardsData.map((elem) => (

@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useRef, useState } from 'react';
+import React, { HTMLAttributes, useId, useRef } from 'react';
 
 import { AllianceNo2 } from '@/pages/_app';
 
@@ -9,50 +9,63 @@ import styles from './Faq.module.scss';
 interface IFaqItem extends HTMLAttributes<HTMLDivElement> {
   question: string;
   answer: string;
+  isActive: boolean;
+  setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
+  index: number;
 }
 
-const FaqItem: React.FC<IFaqItem> = ({ question, answer, className, ...props }) => {
+const FaqItem: React.FC<IFaqItem> = ({
+  question,
+  answer,
+  className,
+  index,
+  isActive,
+  setActiveIndex,
+  ...props
+}) => {
   const faqContent = useRef<HTMLDivElement>(null);
-  const [faqState, setFaqState] = useState<boolean>(false);
-  const [activeIndex, setActiveIndex] = useState<number>(-1);
 
-  function toggleFaq(index: number) {
-    setActiveIndex(index);
-    setFaqState((prev) => !prev);
+  const uniqId = useId();
+  function toggleFaq() {
+    setActiveIndex(isActive ? -1 : index);
   }
 
   const contentHeight = faqContent.current ? faqContent.current.offsetHeight : 0;
 
   return (
     <div
-      className={`${styles.faqItem} ${faqState && styles.faqItem_opened} ${className}`}
-      onClick={() => toggleFaq(activeIndex === -1 ? 0 : -1)}
+      className={`${styles.faqItem} ${isActive && styles.faqItem_opened} ${className}`}
       {...props}
     >
-      <div
+      <button
+        type="button"
         className={`${styles.faqItem__inner} ${
-          faqState ? styles.faqItem__inner_opened : null
+          isActive ? styles.faqItem__inner_opened : null
         }`}
+        onClick={() => toggleFaq()}
+        aria-expanded={isActive}
+        aria-controls={uniqId}
       >
         <div className={styles.faqItem__header}>
           <h4 className={`${styles.faqItem__title} ${AllianceNo2.className}`}>
             {question}
           </h4>
-          {!faqState ? <Plus width={32} height={32} /> : <Minus width={32} height={32} />}
+          {!isActive ? <Plus width={32} height={32} /> : <Minus width={32} height={32} />}
         </div>
         <div
           className={styles.faqItem__contentWrapper}
           style={
-            faqState
+            isActive
               ? { height: `${contentHeight}px`, opacity: 1 }
               : { height: 0, opacity: 0 }
           }
+          aria-labelledby={uniqId}
         >
           <div ref={faqContent} className={styles.faqItem__content}>
             {answer}
           </div>
         </div>
-      </div>
+      </button>
     </div>
   );
 };

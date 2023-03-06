@@ -20,6 +20,7 @@
 
   &_opened {
     background: transparent;
+
     #{$this}__contentWrapper {
       height: 20rem;
     }
@@ -39,24 +40,33 @@
     transition: background 0.5s;
     padding: 30px 40px;
     border-radius: 24px;
+    width: 100%;
+    display: block;
+    cursor: pointer;
     &:hover {
       background: #161c26;
+      color: var(--gray-500);
+      #{$this}__title {
+        color: var(--gray-300);
+      }
     }
   }
   &__header {
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
   }
+
   &__title {
     @include media(md) {
       font-size: rem(20px);
     }
     font-size: rem(24px);
     font-weight: 500;
-    letter-spacing: -1px;
     line-height: 133%;
+    letter-spacing: -1px;
+    transition: color 0.5s;
   }
+
   &__contentWrapper {
     height: 0;
     overflow: hidden;

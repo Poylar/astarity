@@ -1,6 +1,12 @@
 @use './utils/mixins' as *;
 @use './utils/vars' as *;
 
+* {
+  &:focus-visible {
+    outline: 1px solid greenyellow;
+  }
+}
+
 body {
   background: var(--black);
   color: var(--gray-0);
