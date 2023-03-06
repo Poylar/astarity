@@ -6,7 +6,6 @@ $breakpoints: (
   sm: 576px,
   xs: 340px,
 );
-
 @mixin media($breakpoint, $minmax: max-width) {
   @if map-has-key($breakpoints, $breakpoint) {
     @media ( $minmax: #{map-get($breakpoints, $breakpoint)}) {

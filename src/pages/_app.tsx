@@ -7,8 +7,8 @@ import type { AppProps } from 'next/app';
 import localFont from 'next/font/local';
 import { useEffect } from 'react';
 
-import Footer from '@/components/Footer/Footer';
-import Header from '@/components/Header/Header';
+import Footer from '@/components/layout/Footer/Footer';
+import Header from '@/components/layout/Header/Header';
 
 export const AllianceNo1 = localFont({
   src: [

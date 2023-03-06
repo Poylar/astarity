@@ -6,8 +6,9 @@
   --gap-y: 80px;
   @each $breakpoint, $val in $breakpoints {
     @include media($breakpoint) {
-      @if $val == 1920px {
-        $val: 1200;
+      @if $val == 1440px {
+        $val: 1200px;
+        --container: #{$val};
       }
 
       --container: #{$val};
