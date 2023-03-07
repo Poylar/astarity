@@ -1,15 +1,10 @@
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { AllianceNo2 } from '@/pages/_app';
 
 import Btn from '../../ui/Btn/Btn';
 import styles from './CardsItem.module.scss';
-
-interface Coords {
-  x: number;
-  y: number;
-}
 
 type Props = {
   title: string;
@@ -17,6 +12,8 @@ type Props = {
   image?: string;
   imageMobile?: string;
   buttonText: string;
+  x: number;
+  y: number;
 };
 
 const CardsItem: React.FC<Props> = ({
@@ -25,46 +22,33 @@ const CardsItem: React.FC<Props> = ({
   image,
   imageMobile,
   buttonText,
+  x,
+  y,
 }: Props) => {
-  const [globalCoords, setGlobalMousePos] = useState<Coords>({ x: 0, y: 0 });
-  const [localCoords, setLocalMousePos] = useState<Coords>({ x: 0, y: 0 });
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    // 👇 Get mouse position relative to element
-    const localX = event.clientX - event.currentTarget.offsetLeft;
-    const localY = event.clientY - event.currentTarget.offsetTop;
-
-    setLocalMousePos({ x: localX, y: localY });
-  };
+  const [cardCoord, setCardCoord] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      setGlobalMousePos({
-        x: event.clientX,
-        y: event.clientY,
-      });
-    };
+    setCardCoord((prevState) => {
+      if (cardRef.current !== null) {
+        return {
+          x: x - cardRef.current.getBoundingClientRect().left,
+          y: y - cardRef.current.getBoundingClientRect().top,
+        };
+      }
 
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+      return prevState;
+    });
+  }, [x, y]);
 
   const cardStyles: React.CSSProperties = {
-    '--mouse-x': localCoords.x + 'px',
-    '--mouse-y': localCoords.y + 'px',
+    '--mouse-x': `${cardCoord.x}px`,
+    '--mouse-y': `${cardCoord.y}px`,
   } as React.CSSProperties;
 
   return (
-    <div
-      className={styles.card}
-      onMouseMove={handleMouseMove}
-      data-x={`${localCoords.x} ${localCoords.y}`}
-      data-y={`${globalCoords.x} ${globalCoords.y}`}
-      style={cardStyles}
-    >
+    <div className={styles.card} style={cardStyles} ref={cardRef}>
       <div className={styles.card__inner}>
         <div className={styles.card__image}>
           {image && (
