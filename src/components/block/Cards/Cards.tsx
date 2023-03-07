@@ -17,7 +17,7 @@ const Cards: React.FC = () => {
     const handleMouseMove = (event: MouseEvent) => {
       setGlobalState({ x: event.clientX, y: event.clientY });
     };
-    const cardMouseMove = (event: React.MouseEvent) => {
+    const cardMouseMove = (event: any) => {
       setCardState({
         x: event.currentTarget.getBoundingClientRect().left,
         y: event.currentTarget.getBoundingClientRect().top,
