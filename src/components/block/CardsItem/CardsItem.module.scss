@@ -19,27 +19,36 @@
       opacity: 1;
     }
   }
+  &:before {
+    content: '';
+    background: radial-gradient(
+      var(--circle-size, 600px) circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.06),
+      transparent 40%
+    );
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
 
+    transition: opacity 0.5s;
+  }
   &:after {
     content: '';
     background: radial-gradient(
       var(--circle-size, 600px) circle at var(--mouse-x) var(--mouse-y),
-      #1d1f2b,
+      rgba(255, 255, 255, 0.4),
       transparent 40%
     );
-    border-radius: inherit;
-
+    z-index: 1;
+    width: 100%;
     height: 100%;
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
+    display: block;
     position: absolute;
     top: 0;
-    transition: opacity 0.5s;
-    width: 100%;
 
     transition: opacity 0.5s;
-    z-index: 1;
   }
   &__inner {
     @include media(md) {
@@ -51,6 +60,8 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 10;
   }
   &__text {
     @include media(md) {
@@ -63,8 +74,6 @@
     height: 100%;
     justify-content: space-between;
     margin-top: 14px;
-    position: relative;
-    z-index: 2;
   }
   &__title {
     @include media(md) {
@@ -101,7 +110,7 @@
     top: 16px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 4;
+    z-index: 2;
   }
   &__imageGrid {
     position: absolute;
@@ -111,7 +120,6 @@
     object-fit: contain;
     width: 100%;
     object-position: top center;
-    z-index: 3;
   }
   &__btn {
     @include media(md) {

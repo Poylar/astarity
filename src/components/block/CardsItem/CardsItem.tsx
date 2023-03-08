@@ -82,7 +82,8 @@ const CardsItem: React.FC<Props> = ({
             variant="secondary"
             className={styles.card__btn}
             data-aos="zoom-in"
-            href="https://google.com"
+            disabled
+            // href="https://google.com"
           >
             {buttonText}
           </Btn>

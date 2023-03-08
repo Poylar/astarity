@@ -47,17 +47,17 @@ const Header: React.FC = () => {
   return (
     <header ref={header} className={`${styles.header} container container_big`}>
       <div className={styles.header__inner}>
-        <SocialsList
+        {/* <SocialsList
           data-aos="fade-left"
           className={styles.header__socials}
           items={socialsArray}
-        />
+        /> */}
         <div className={styles.header__logo} data-aos="fade-down">
           <Logo />
         </div>
-        <Btn className={styles.header__btn} variant="primary" href="https://google.com">
+        {/* <Btn className={styles.header__btn} variant="primary" href="https://google.com">
           Launch app
-        </Btn>
+        </Btn> */}
       </div>
     </header>
   );
