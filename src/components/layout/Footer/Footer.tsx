@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
               <Image src={LogoSrc} width={32} height={32} alt="Logo" />
             </Link>
           </div>
-          {/* <nav className={styles.footerNav}>
+          <nav className={styles.footerNav}>
             <ul className={styles.footerNav__list}>
               {footerNav.map(({ title, href }) => (
                 <li className={styles.footerNav__item} key={title}>
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-          </nav> */}
+          </nav>
         </div>
         <div className={styles.class}></div>
         <SocialsList items={socialsArray} />

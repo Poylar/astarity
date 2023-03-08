@@ -19,7 +19,6 @@
     }
   }
   &__logo {
-    margin: auto;
     @include media(sm) {
       width: 160px;
       img {
